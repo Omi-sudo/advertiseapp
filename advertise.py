@@ -5,11 +5,15 @@ import streamlit as st
 from sklearn.linear_model import LogisticRegression
 
 
-
 st.title("Advertising ML Project")
+print('\n')
+st.subheader("This project helps us to find us the whether user is clicked on advertise  or not.")
+st.write('\n Below is the dataset we are going to use for predictive analytics.')
 ad_data = pd.read_csv('advertising.csv')
 st.write(ad_data)
-st.write("Cleaned Dataset")
+st.subheader("Cleaned Dataset:")
+st.write('\n')
+st.write('We have performed data scrubbing on above data set and the newly cleaned dataset given below.')
 ad_data.drop(['Ad Topic Line', 'City', 'Country', 'Timestamp'], axis=1, inplace=True)
 st.write(ad_data)
 
@@ -33,6 +37,8 @@ def user_input_features():
 df = user_input_features()
 
 st.subheader('User Input Parameters')
+st.write('To give input parameters please click on the above > button ')
+st.write('Selected input parameters given below')
 st.write(df)
 
 x = ad_data[['Daily Time Spent on Site', 'Age', 'Area Income', 'Daily Internet Usage', 'Male']]
